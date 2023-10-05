@@ -50,7 +50,7 @@ export const ContactForm = () => {
       toast.warning('Контакт з таким імям або номером телефону вже існує.');
     } else {
       toast.success('Операція завершилася успішно');
-      dispatch(addContact(newContact));
+      // dispatch(addContact(newContact));
       resetForm();
     }
   };
