@@ -2,25 +2,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: solid 2px red;
-  padding-top: 20px;
+
+  /* padding-top: 20px;
   padding-bottom: 20px;
   margin-left: 20px;
-  width: 100%;
+  width: 100%; */
 }
-.box {
-  margin-right: 15px;
-}
+
 .link {
   font-size: xx-large;
   color: black;
-}
-.links {
-  font-size: x-large;
-  margin-left: 15px;
-  color: green;
-}
-.links:hover,
-.links:focus {
-  color: blue;
 }
