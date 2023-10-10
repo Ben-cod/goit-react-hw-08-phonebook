@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[513],{9513:function(e,a,n){n.r(a),n.d(a,{default:function(){return s}});var t=n(7311),c=n(5288),m=n(2791),o=n(9434),r=n(184);function s(){var e=(0,o.I0)();return(0,m.useEffect)((function(){e(t.yF)}),[e]),(0,r.jsx)("main",{className:c.Z.main,children:(0,r.jsx)("h1",{className:c.Z.home,children:"Contakts manager welcome page"})})}},5288:function(e,a){a.Z={home:"Page_home__oB7FM",main:"Page_main__BjSSz"}}}]);
+//# sourceMappingURL=513.281cec14.chunk.js.map
