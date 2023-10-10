@@ -25,9 +25,14 @@ export const LoginForm = () => {
     },
     validationSchema: validationSchema,
     onSubmit: values => {
-      dispatch(register(values));
-      formik.resetForm();
-      toast.success('Welcome!');
+      dispatch(register(values))
+        .then(() => {
+          toast.success('Welcome!');
+          formik.resetForm();
+        })
+        .catch(error => {
+          toast.error(' Please try again.');
+        });
     },
   });
 

@@ -42,7 +42,6 @@ export const RegisterForm = () => {
           formik.resetForm();
         })
         .catch(error => {
-          console.error('Registration error:', error);
           toast.error('Registration failed. Please try again.');
         });
     },
