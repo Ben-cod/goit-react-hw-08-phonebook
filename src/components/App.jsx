@@ -5,9 +5,10 @@ import { useDispatch } from 'react-redux';
 import { refreshUser } from 'Redux/auth/operation';
 import { Route, Routes } from 'react-router-dom';
 import { useAuth } from './hooks';
-import { Layout } from './Layout/Layout';
+
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
+import { Layout } from './Layout/Layout';
 
 const HomePage = lazy(() => import('../page/Home'));
 const RegisterPage = lazy(() => import('../page/Register'));
