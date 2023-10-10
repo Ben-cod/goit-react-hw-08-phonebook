@@ -1,3 +1,4 @@
+
 import { AppBar } from 'components/appbar/AppBar';
 import css from './layout.module.css';
 import { Suspense } from 'react';
