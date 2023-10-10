@@ -36,9 +36,15 @@ export const RegisterForm = () => {
     },
     validationSchema: validationSchema,
     onSubmit: values => {
-      dispatch(register(values));
-      formik.resetForm();
-      toast.success('Registration successful!');
+      dispatch(register(values))
+        .then(() => {
+          toast.success('Registration successful!');
+          formik.resetForm();
+        })
+        .catch(error => {
+          console.error('Registration error:', error);
+          toast.error('Registration failed. Please try again.');
+        });
     },
   });
 
