@@ -35,15 +35,14 @@ export const RegisterForm = () => {
       password: '',
     },
     validationSchema: validationSchema,
-    onSubmit: values => {
-      dispatch(register(values))
-        .then(() => {
-          toast.success('Registration successful!');
-          formik.resetForm();
-        })
-        .catch(error => {
-          toast.error('Registration failed. Please try again.');
-        });
+    onSubmit: async values => {
+      try {
+        await dispatch(register(values));
+        toast.success('Registration successful!');
+        formik.resetForm();
+      } catch (error) {
+        toast.error('Registration failed. Please try again.');
+      }
     },
   });
 
