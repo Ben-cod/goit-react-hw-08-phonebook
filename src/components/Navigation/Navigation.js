@@ -8,7 +8,7 @@ export const Navigation = () => {
     <nav className={css.nav}>
       {isLoggedIn ? (
         <NavLink className={css.link} to="contacts">
-          contacts
+          Contacts
         </NavLink>
       ) : (
         <NavLink className={css.link} to="/">

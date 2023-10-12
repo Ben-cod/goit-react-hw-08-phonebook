@@ -1,12 +1,13 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
-import { register } from 'Redux/auth/operation';
+
 import * as Yup from 'yup';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import css from './RegisterForm.module.css';
+import { logIn } from 'Redux/auth/operation';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string()
@@ -26,7 +27,7 @@ export const LoginForm = () => {
     validationSchema: validationSchema,
     onSubmit: values => {
       try {
-        dispatch(register(values));
+        dispatch(logIn(values));
         toast.success('Welcome!');
         formik.resetForm();
       } catch (error) {

@@ -17,7 +17,6 @@ const Contacts = () => {
 
   return (
     <main>
-      Contacts
       <Filter />
       <ContactForm />
       <div>{isLoading && 'Request in progress...'}</div>
