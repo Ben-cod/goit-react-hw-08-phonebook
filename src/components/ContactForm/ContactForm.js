@@ -21,7 +21,7 @@ const validationSchema = Yup.object().shape({
       /^[a-zA-Zа-яА-ЯіІїЇєЄ\s']+(([' -][a-zA-Zа-яА-ЯіІїЇєЄ\s']*)?[a-zA-Zа-яА-ЯіІїЇєЄ\s']*)*$/,
       'Invalid name format'
     ),
-  phone: Yup.string()
+  number: Yup.string()
     .required('Phone is required')
     .matches(
       /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/,
@@ -34,17 +34,17 @@ export const ContactForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, { resetForm }) => {
-    const { name, phone, id } = values;
+    const { name, number, id } = values;
 
     const newContact = {
       id,
       name,
-      phone,
+      number,
     };
     const isContactExists = contacts.some(
       contact =>
         contact.name.toLowerCase() === name.toLowerCase() ||
-        contact.phone === phone
+        contact.number === number
     );
     if (isContactExists) {
       toast.warning('Контакт з таким імям або номером телефону вже існує.');
@@ -57,7 +57,7 @@ export const ContactForm = () => {
   return (
     <div>
       <Formik
-        initialValues={{ name: '', phone: '' }}
+        initialValues={{ name: '', number: '' }}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
@@ -77,17 +77,17 @@ export const ContactForm = () => {
               <ErrorMessage name="name" component="div" />
             </div>
             <div>
-              <label className={css.label} htmlFor="phone">
+              <label className={css.label} htmlFor="number">
                 Phone
               </label>
               <Field
                 className={css.field}
                 type="text"
-                id="phone"
-                name="phone"
+                id="number"
+                name="number"
                 placeholder="459-12-56"
               />
-              <ErrorMessage name="phone" component="div" />
+              <ErrorMessage name="number" component="div" />
             </div>
           </div>
           <button className={css.button} type="submit">

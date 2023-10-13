@@ -17,19 +17,19 @@ export const ContactList = () => {
   const isloading = useSelector(selectIsLoading);
 
   useEffect(() => {
-    dispatch(fetchContacts);
+    dispatch(fetchContacts());
   }, [dispatch]);
 
   return (
     <ul>
       {isloading && <Audio />}
-      {contacts.map(({ id, phone, name }) => {
+      {contacts.map(({ id, number, name }) => {
         return (
           <li key={id}>
             <div className={css.contact_card}>
               <div className={css.contact_details}>
                 <p className={css.contact_name}>{name}</p>
-                <p className={css.contact_phone}>☎️ {phone}</p>
+                <p className={css.contact_phone}>☎️ {number}</p>
               </div>
               <button
                 className={css.contact_button}

@@ -1,17 +1,19 @@
 .welcome {
+  font-size: x-large;
   color: red;
 }
 .wrapper {
   display: flex;
 }
 .nikname {
+  margin-left: 15px;
   font-size: xx-large;
   color: blue;
 }
 .buton {
   width: 200px;
   padding: 5px;
-
+  font-size: x-large;
   border: none;
   color: red;
   background-color: rgba(0, 0, 0, 0);

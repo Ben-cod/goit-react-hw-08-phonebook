@@ -12,10 +12,10 @@ export const UseMenu = () => {
   return (
     <div className={css.wrapper}>
       <p className={css.welcome}>
-        Welcome! <span className={css.nikname}>🐭{user.name}</span>
+        Welcome! <span className={css.nikname}>🐭{user.email}</span>
       </p>
       <button className={css.buton} type="button" onClick={handleLogOut}>
-        ↪️Logout
+        Logout
       </button>
     </div>
   );
