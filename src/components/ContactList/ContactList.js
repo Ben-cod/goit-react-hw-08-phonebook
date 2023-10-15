@@ -1,24 +1,19 @@
 import { useDispatch, useSelector } from 'react-redux';
 import css from './ContactList.module.css';
 
-import { deleteContact, fetchContacts } from 'Redux/Contacts/operation';
+import { deleteContact } from 'Redux/Contacts/operation';
 import {
   selectError,
   selectIsLoading,
   selectVisibleContacts,
 } from 'Redux/Contacts/selectors';
 import { Audio } from 'react-loader-spinner';
-import { useEffect } from 'react';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectVisibleContacts);
   const error = useSelector(selectError);
   const isloading = useSelector(selectIsLoading);
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
 
   return (
     <ul>
